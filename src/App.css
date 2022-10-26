@@ -1,0 +1,86 @@
+/* 
+
+## Colors
+
+- Dark Blue (Dark Mode Elements): hsl(209, 23%, 22%)
+- Very Dark Blue (Dark Mode Background): hsl(207, 26%, 17%)
+- Very Dark Blue (Light Mode Text): hsl(200, 15%, 8%)
+- Dark Gray (Light Mode Input): hsl(0, 0%, 52%)
+- Very Light Gray (Light Mode Background): hsl(0, 0%, 98%)
+- White (Dark Mode Text & Light Mode Elements): hsl(0, 0%, 100%)
+
+## Text
+
+- Homepage Items: 14px
+- Detail Page: 16px 
+
+### Fonts
+
+- Family: [Nunito Sans](https://fonts.google.com/specimen/Nunito+Sans)
+- font-family: 'Nunito Sans', sans-serif;
+- Weights: 300, 600, 800
+
+*/
+
+body {
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 14px;
+    margin: 0;
+}
+
+.navbar {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 15px 0px;
+}
+
+.dark-mode-toggle {
+    font-weight: 600;
+    font-size: 12px;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.home-page {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.home-page .search-bar {
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 15px 0px;
+    border-radius: 10px;
+
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.home-page input[name="search-input"] {
+    border: none;
+    outline: none;
+}
+
+.home-page input[name="search-input"]::placeholder {
+    color: gray;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+}
+
+.filter-by-region select {
+    padding: 20px;
+    border: none;
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 15px 0px;
+    border-radius: 10px;
+    /* Adds space right of arrow */
+    border-right: 16px solid transparent;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+}
