@@ -84,3 +84,24 @@ body {
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 600;
 }
+
+.country-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.country-container {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 15px 0px;
+    width: 70%;
+}
+
+.country-container img {
+    width: 100%;
+}
+
+.country-text {
+    padding: 20px;
+    font-size: 12px;
+}
