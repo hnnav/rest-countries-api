@@ -1,18 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 import './App.css';
 import Navbar from './components/Navbar'
 import Home from './components/Home'
-import Detail from './components/Detail'
-import CountryList from './components/CountryList';
+import Country from './components/Country'
 
-function App() {
+export default function App() {
+
+  const [countries, setCountries] = useState([]);
+
+  // Fetch all countries
+  const getApiData = async () => {
+    const response = await fetch(
+      "https://restcountries.com/v3.1/all"
+    ).then((response) => response.json());
+    setCountries(response);
+  };
+  useEffect(() => {
+    getApiData();
+  }, []);
+
+  // Get Country Name
+	const getCountryName = (code) => {
+		return countries
+			.filter((element) => {
+				return element.cca3 === code;
+			})
+			.map((el, i) => el.name.common);
+	};
+
   return (
-    <div className="App">
+    <BrowserRouter>
       <Navbar />
-      <Home />
-      <CountryList />
-    </div>
+      <Routes>
+        <Route path="/" element={<Home countries={countries} />} />
+        <Route path='/:countryName' element={<Country getCountryName={getCountryName}/>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;

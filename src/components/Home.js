@@ -1,13 +1,15 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
-export default function Home() {
+export default function Home({ countries }) {
     return (
         <div className="home-page">
+
             <div className="search-bar">
                 <ion-icon name="search-outline"></ion-icon>
                 <input name="search-input" placeholder="Search for a country..."></input>
             </div>
-            
+
             <div className="filter-by-region">
                 <select name="regions" id="regions">
                     <option value="default">Filter by Region</option>
@@ -18,6 +20,24 @@ export default function Home() {
                     <option value="oceania">Oceania</option>
                 </select>
             </div>
+
+            <div className="country-list">
+              {countries &&
+                countries.map((country) => (
+                    <div className="country-container">
+                    <Link to={"/" + country.name.common}>
+                        <img src={country.flags.png} />
+                        <div className="country-text">
+                            <h2>{country.name.common}</h2> 
+                            <p><b>Population:</b> {country.population}</p>
+                            <p><b>Region:</b> {country.region}</p>
+                            <p><b>Capital:</b> {country.capital}</p>
+                        </div>
+                    </Link>
+                  </div>
+                ))}
+            </div>
         </div>
+
     )
 }
