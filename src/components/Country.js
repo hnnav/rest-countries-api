@@ -52,7 +52,7 @@ export default function Country({ countries }) {
                 {country.borders ? <p><b>Border countries:</b></p> : null} 
                 <div className="border-container">
                     {country.borders ? Object.entries(country.borders).map((countryCode) => {
-			    										return <Link to={"/" + getCountryName(countryCode[1])}><div className="border-item">{getCountryName(countryCode[1])}</div></Link>;
+			    										return <a href={"/" + getCountryName(countryCode[1])}><div className="border-item">{getCountryName(countryCode[1])}</div></a>;
 			    									}) : null}
                 </div>
             </div>
