@@ -11,10 +11,9 @@ export default function Home({ countries }) {
     const filteredCountries = countries.filter((country) => {
         if (searchInput === '') {
             return country;
-        }
-        else {
-            return country.name.common.toLowerCase().includes(searchInput)
-        }
+        } else {
+            return country.name.common.toLowerCase().includes(searchInput) || country.region.toLowerCase().includes(searchInput)
+        } 
     })
 
     return (
@@ -26,8 +25,8 @@ export default function Home({ countries }) {
             </div>
 
             <div className="filter-by-region">
-                <select name="regions" id="regions">
-                    <option value="default">Filter by Region</option>
+                <select onChange={searchHandler} name="regions" id="regions">
+                    <option value="">Filter by Region</option>
                     <option value="africa">Africa</option>
                     <option value="america">America</option>
                     <option value="asia">Asia</option>
