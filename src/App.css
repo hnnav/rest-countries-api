@@ -120,6 +120,10 @@ a {
     gap: 20px;
 }
 
+.country-detail img {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 15px 0px;
+}
+
 .detail-page-text h1 {
     font-size: 20px;
     margin-bottom: 30px;
@@ -137,4 +141,19 @@ a {
     gap: 8px;
 
     font-family: 'Nunito Sans', sans-serif;;
+}
+
+.border-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.border-item {
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 10px 0px;
+
 }

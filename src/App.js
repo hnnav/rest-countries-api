@@ -23,7 +23,7 @@ export default function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home countries={countries} />} />
-        <Route path='/:countryName' element={<Country />} />
+        <Route path='/:countryName' element={<Country countries={countries}/>} />
       </Routes>
     </BrowserRouter>
   );
