@@ -1,0 +1,97 @@
+/* 
+
+## Colors
+
+- Dark Blue (Dark Mode Elements): hsl(209, 23%, 22%)
+- Very Dark Blue (Dark Mode Background): hsl(207, 26%, 17%)
+- Very Dark Blue (Light Mode Text): hsl(200, 15%, 8%)
+- Dark Gray (Light Mode Input): hsl(0, 0%, 52%)
+- Very Light Gray (Light Mode Background): hsl(0, 0%, 98%)
+- White (Dark Mode Text & Light Mode Elements): hsl(0, 0%, 100%)
+
+## Text
+
+- Homepage Items: 14px
+- Detail Page: 16px 
+
+### Fonts
+
+- Family: [Nunito Sans](https://fonts.google.com/specimen/Nunito+Sans)
+- font-family: 'Nunito Sans', sans-serif;
+- Weights: 300, 600, 800
+
+*/
+
+/* Desktop only 1440 px */
+
+@media only screen and (min-width: 900px) {
+    .navbar {
+        padding-left: 100px;
+        padding-right: 100px;
+        height: 50px;
+        align-items: center;
+    }
+
+    .navbar h3 {
+        font-size: 20px;
+    }
+
+    .navbar p {
+        font-size: 14px;
+    }
+
+    .search-and-filter {
+        margin: 20px 70px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .search-bar {
+        width: 500px;
+    }
+
+    .country-list {
+        margin-left: 70px;
+        margin-right: 70px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 70px;
+    }
+
+    .country-container {
+        width: 260px;
+        height: 400px;
+    }
+
+    .country-container img {
+        height: 160px;
+    }
+
+    /* Detail page */
+
+    .country-detail {
+        margin-top: 40px;
+        margin-left: 70px;
+    }
+
+    .flag-and-text {
+        display: flex;
+        align-items: center;
+        gap: 80px;
+    }
+
+    .flag-and-text img {
+        width: 40%;
+    }
+
+    .flag-and-text h1 {
+        font-size: 30px;
+    }
+
+    .border-title {
+        margin-top: 40px;
+    }
+
+  }

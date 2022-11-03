@@ -18,23 +18,24 @@ export default function Home({ countries }) {
 
     return (
         <div className="home-page">
+            <div className="search-and-filter">
+                
+                <div className="search-bar">
+                    <ion-icon name="search-outline"></ion-icon>
+                    <input onChange={searchHandler} name="search-input" placeholder="Search for a country..."></input>
+                </div>
 
-            <div className="search-bar">
-                <ion-icon name="search-outline"></ion-icon>
-                <input onChange={searchHandler} name="search-input" placeholder="Search for a country..."></input>
+                <div className="filter-by-region">
+                    <select onChange={searchHandler} name="regions" id="regions">
+                        <option value="">Filter by Region</option>
+                        <option value="africa">Africa</option>
+                        <option value="america">America</option>
+                        <option value="asia">Asia</option>
+                        <option value="europe">Europe</option>
+                        <option value="oceania">Oceania</option>
+                    </select>
+                </div>
             </div>
-
-            <div className="filter-by-region">
-                <select onChange={searchHandler} name="regions" id="regions">
-                    <option value="">Filter by Region</option>
-                    <option value="africa">Africa</option>
-                    <option value="america">America</option>
-                    <option value="asia">Asia</option>
-                    <option value="europe">Europe</option>
-                    <option value="oceania">Oceania</option>
-                </select>
-            </div>
-
             <div className="country-list">
               {countries &&
                 filteredCountries.map((country) => (

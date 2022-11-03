@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
 import './darkMode.css';
+import './Desktop.css';
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Country from './components/Country'
@@ -34,12 +35,12 @@ export default function App() {
   }, [theme]);
 
   return (
-    <BrowserRouter className={`App ${theme}`}>
+    <Router className={`App ${theme}`}>
       <Navbar toggleTheme={toggleTheme}/>
       <Routes>
-        <Route path="/" element={<Home countries={countries} />} />
-        <Route path='/:countryName' element={<Country countries={countries}/>} />
+        <Route exact path="/" element={<Home countries={countries} />} />
+        <Route path='/:countryName' element={<Country countries={countries} />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
-}
+  }
