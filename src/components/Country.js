@@ -15,7 +15,7 @@ export default function Country({ countries }) {
     };
     useEffect(() => {
         fetchOneCountry(); // eslint-disable-next-line
-	}, []);
+	}, [countryName]);
 
     // Get country name from country code
     const getCountryName = (code) => {
@@ -56,9 +56,6 @@ export default function Country({ countries }) {
                     <div className="border-container">
                     {country.borders ? Object.entries(country.borders).map((countryCode) => {
                         const countryName = getCountryName(countryCode[1])
-                        /* return  <a href={"/" + countryName}>
-                                    <div className="border-item">{countryName}</div>
-                                </a>; */
                         return  <Link to={"/" + countryName}>
                                     <div className="border-item" >{countryName}</div>
                                 </Link>
