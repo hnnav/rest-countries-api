@@ -52,17 +52,16 @@ export default function Country({ countries }) {
 			        									}).join(', ') : null}</p>
 
                     {country.borders ? <p className="border-title"><b>Border countries:</b></p> : null} 
+                    
                     <div className="border-container">
                     {country.borders ? Object.entries(country.borders).map((countryCode) => {
-
                         const countryName = getCountryName(countryCode[1])
-
-                        return  <a href={"/" + countryName}>
+                        /* return  <a href={"/" + countryName}>
                                     <div className="border-item">{countryName}</div>
-                                </a>;
-                        /* return  <Link to={"/" + countryName}>
+                                </a>; */
+                        return  <Link to={"/" + countryName}>
                                     <div className="border-item" >{countryName}</div>
-                                </Link> */
+                                </Link>
                         }) : null}
                     </div>
                 </div>
