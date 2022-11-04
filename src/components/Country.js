@@ -34,34 +34,36 @@ export default function Country({ countries }) {
             <div className="flag-and-text">
                 <img className="detail-page-flag" src={country.name ? country.flags.png : null} alt='flag'></img>
 
-                <div className="detail-page-text">
-                    <h1>{country.name ? country.name.common : null}</h1>
-                    <p><b>Native Name:</b> {country.name ? Object.entries(country.name.nativeName).map((item) => {
-			        										return item[1].common;
-			        									}).shift(0) : null}</p>
-                    <p><b>Population:</b> {country.population}</p>
-                    <p><b>Region:</b> {country.region}</p>
-                    <p><b>Subregion:</b> {country.subregion}</p>
-                    <p><b>Capital:</b> {country.capital}</p>
-                    <p><b>Top level domain:</b> {country.tld}</p>
-                    <p><b>Currencies:</b> {country.currencies ? Object.entries(country.currencies).map((currency) => {
-			        										return currency[1].name;
-			        									}) : null}</p>
-                    <p><b>Languages:</b> {country.languages ? Object.entries(country.languages).map((language) => {
-			        										return language[1];
-			        									}).join(', ') : null}</p>
-
-                    {country.borders ? <p className="border-title"><b>Border countries:</b></p> : null} 
-                    
-                    <div className="border-container">
-                    {country.borders ? Object.entries(country.borders).map((countryCode) => {
-                        const countryName = getCountryName(countryCode[1])
-                        return  <Link to={"/" + countryName}>
-                                    <div className="border-item" >{countryName}</div>
-                                </Link>
-                        }) : null}
+                {country.name && 
+                    <div className="detail-page-text">
+                        <h1>{country.name.common}</h1> 
+                        <p><b>Native Name: </b>
+                        {Object.entries(country.name.nativeName).map((item) => {
+			    										return item[1].common}).shift(0)}</p>
+                        <p><b>Population:</b> {country.population}</p>
+                        <p><b>Region:</b> {country.region}</p>
+                        <p><b>Subregion:</b> {country.subregion}</p>
+                        <p><b>Capital:</b> {country.capital}</p>
+                        <p><b>Top level domain:</b> {country.tld}</p>
+                        <p><b>Currencies:</b> {Object.entries(country.currencies).map((currency) => {
+                                                                return currency[1].name}).join(', ')}</p>
+                        <p><b>Languages:</b> {Object.entries(country.languages).map((language) => {
+                                                                return language[1]}).join(', ')}</p>
+                        {country.borders && 
+                            <div>
+                                <p className="border-title"><b>Border countries:</b></p>
+                                <div className="border-container">
+                                    {Object.entries(country.borders).map((countryCode) => {
+                                    const countryName = getCountryName(countryCode[1])
+                                    return  <Link to={"/" + countryName}>
+                                                <div className="border-item">{countryName}</div>
+                                            </Link>
+                                    })}
+                                </div>
+                            </div>
+                        } 
                     </div>
-                </div>
+                }
             </div>
         </div>
     )
