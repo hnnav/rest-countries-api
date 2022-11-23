@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import './styles/App.css';
-import './styles/Darkmode.css';
-import './styles/Desktop.css';
+import './styles/app.css';
+import './styles/darkmode.css';
+import './styles/desktop.css';
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Country from './components/Country'
